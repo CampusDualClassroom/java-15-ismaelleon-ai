@@ -1,5 +1,9 @@
 package com.campusdual.classroom;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public abstract class Merchandise {
 
 	protected String name;
@@ -9,6 +13,7 @@ public abstract class Merchandise {
 	protected String area;
 	protected String shelf;
 	protected int quantity;
+
 
 	public Merchandise(String name, String uniqueId, String responsibleId) {
 		this.name = name;
@@ -25,6 +30,7 @@ public abstract class Merchandise {
 		this.area = area;
 		this.shelf = shelf;
 		this.quantity = quantity;
+
 	}
 
 	public String getLocation() {
@@ -36,6 +42,10 @@ public abstract class Merchandise {
 		builder.append(" E - ");
 		builder.append(getShelf());
 		return builder.toString();
+	}
+	public Date expirationDate() {
+
+		return Calendar.getInstance().getTime();
 	}
 
 	public abstract Object getSpecificData();
